@@ -20,6 +20,23 @@ Text or push-to-talk input
   -> optional local text-to-speech output
 ```
 
+## Run locally
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Then open the Vite URL shown in the terminal.
+
+The current app is Phase 1 only:
+
+- Text input.
+- Read-only sample Factory status data.
+- Deterministic operator responses.
+- Unsupported action commands blocked.
+- No STT/TTS runtime yet.
+
 ## Safety boundary
 
 Command Center may display Factory state and request bounded actions through approved Factory APIs.
