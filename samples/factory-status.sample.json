@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-06-26T09:30:00Z",
+  "source": "sample",
+  "factory_health": {
+    "status": "warning",
+    "summary": "Factory is mostly operational, but service bootstrap proof is still pending.",
+    "services": [
+      {
+        "name": "operator-bridge",
+        "status": "ok",
+        "last_checked_at": "2026-06-26T09:30:00Z",
+        "details": "Local service responds to health checks."
+      },
+      {
+        "name": "runtime-bootstrap",
+        "status": "warning",
+        "last_checked_at": "2026-06-26T09:30:00Z",
+        "details": "Runtime verification must preserve repo venv Python path."
+      },
+      {
+        "name": "evidence-relay",
+        "status": "ok",
+        "last_checked_at": "2026-06-26T09:30:00Z",
+        "details": "Evidence relay shell is available."
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "job-001",
+      "title": "Review PR 373 bootstrap fix",
+      "state": "blocked",
+      "priority": "P0",
+      "owner": "CTO",
+      "blocked_reason": "Needs review and proof before issue 372 can close.",
+      "updated_at": "2026-06-26T09:30:00Z"
+    },
+    {
+      "id": "job-002",
+      "title": "Define Factory API/event contract v0.1",
+      "state": "queued",
+      "priority": "P1",
+      "owner": "CTO",
+      "blocked_reason": null,
+      "updated_at": "2026-06-26T09:30:00Z"
+    },
+    {
+      "id": "job-003",
+      "title": "Command Center read-only voice prototype",
+      "state": "queued",
+      "priority": "P1",
+      "owner": "Codex",
+      "blocked_reason": null,
+      "updated_at": "2026-06-26T09:30:00Z"
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 373,
+      "repo": "tpcmUAE/tpcm-ai-factory",
+      "title": "Preserve repo venv path during runtime checks",
+      "state": "draft",
+      "needs_review": true,
+      "risk": "medium",
+      "summary": "Fixes runtime check path resolution so repo venv dependencies are preserved."
+    }
+  ],
+  "evidence_packets": [
+    {
+      "id": "evidence-001",
+      "title": "Service bootstrap proof",
+      "state": "pending",
+      "related_repo": "tpcmUAE/tpcm-ai-factory",
+      "related_issue": 372,
+      "summary": "Proof should be rerun after PR 373 is validated and merged.",
+      "updated_at": "2026-06-26T09:30:00Z"
+    }
+  ],
+  "attention_items": [
+    {
+      "id": "attention-001",
+      "severity": "urgent",
+      "title": "Bootstrap proof blocked",
+      "summary": "Runtime verification is not fully trusted until the venv path issue is resolved.",
+      "recommended_next_step": "Review PR 373 before closing issue 372."
+    },
+    {
+      "id": "attention-002",
+      "severity": "warning",
+      "title": "Factory API contract needed",
+      "summary": "Command Center and Studio can use sample data now, but live integration needs read-only Factory API contracts.",
+      "recommended_next_step": "Define Factory status/read-only event contract v0.1."
+    }
+  ]
+}
